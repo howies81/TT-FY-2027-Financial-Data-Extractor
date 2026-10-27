@@ -55,3 +55,4 @@ if ws is not None:
     wb.save(file_path)
 
     print("Pipeline complete. TT Government Borrowing Charts created")
+    wb.close()
