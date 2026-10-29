@@ -16,7 +16,7 @@ if "TT_Nat_Gas_Prod_Copy" not in nat_gas_wb.sheetnames:
     nat_gas_ws_clean.delete_cols(2)
     nat_gas_ws_clean.delete_cols(6)
 else:
-    del(nat_gas_wb["TT_Nat_Gas_Prod_Copy"])
+    nat_gas_wb.remove(nat_gas_wb["TT_Nat_Gas_Prod_Copy"])
     nat_gas_ws_clean = nat_gas_wb.copy_worksheet(nat_gas_ws)
     nat_gas_ws_clean.delete_cols(2)
     nat_gas_ws_clean.delete_cols(6)
@@ -138,7 +138,7 @@ if nat_gas_ws_clean is not None:
         chart_sheet = nat_gas_wb.create_chartsheet(title="Downstream Gas Util")
         chart_sheet.add_chart(nat_gas_chart)
     else:
-        del(nat_gas_wb["Downstream Gas Util"])
+        nat_gas_wb.remove(nat_gas_wb["Downstream Gas Util"])
         chart_sheet = nat_gas_wb.create_chartsheet(title="Downstream Gas Util")
         chart_sheet.add_chart(nat_gas_chart)
 
